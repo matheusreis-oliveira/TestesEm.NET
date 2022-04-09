@@ -7,23 +7,49 @@ namespace Alura.Estacionamento.Testes
     public class PatioTestes
     {
         [Fact]
-        public void TestaMetodoTotalFaturadoPatioModelo()
+        public void TestaMetodoTotalFaturadoComUmVeiculo()
         {
             var estacionamento = new Patio();
-            var carro = new Veiculo();
+            var veiculo = new Veiculo();
 
-            carro.Proprietario = "Fulado de Tal";
-            carro.Cor = "Preto";
-            carro.Modelo = "Carro";
-            carro.Placa = "abc-1234";
-            carro.Tipo = TipoVeiculo.Automovel;
+            veiculo.Proprietario = "Fulado de Tal";
+            veiculo.Cor = "Preto";
+            veiculo.Modelo = "Carro";
+            veiculo.Placa = "abc-1234";
+            veiculo.Tipo = TipoVeiculo.Automovel;
 
-            estacionamento.RegistrarEntradaVeiculo(carro);
-            estacionamento.RegistrarSaidaVeiculo(carro.Placa);
+            estacionamento.RegistrarEntradaVeiculo(veiculo);
+            estacionamento.RegistrarSaidaVeiculo(veiculo.Placa);
 
 
 
             var faturamento = estacionamento.TotalFaturado();
+
+
+
+            Assert.Equal(2, faturamento);
+        }
+
+        [Theory] //permite fazer testes com parametros usando o InlineData
+        [InlineData("Fulano de Tal", "ABC-1234", "Preto", "Carro")]
+        [InlineData("Fulano de Tal Filho", "BCD-4321", "Branco", "Carro")]
+        [InlineData("Fulano de Tal Primo", "GEF-9876", "Vermelho", "Moto")]
+        public void TestaMetodoTotalFaturadoComVariosVeiculos(string proprietario, string placa, string cor, string modelo)
+        {
+            var estacionamento = new Patio();
+            var veiculo = new Veiculo();
+
+            veiculo.Proprietario = proprietario;
+            veiculo.Placa = placa;
+            veiculo.Cor = cor;
+            veiculo.Modelo = modelo;
+
+            estacionamento.RegistrarEntradaVeiculo(veiculo);
+            estacionamento.RegistrarSaidaVeiculo(veiculo.Placa);
+
+
+            var faturamento = estacionamento.TotalFaturado();
+
 
 
             Assert.Equal(2, faturamento);

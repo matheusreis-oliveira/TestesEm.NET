@@ -6,7 +6,7 @@ namespace Alura.Estacionamento.Testes
     public class VeiculoTestes
     {
         [Fact]
-        public void TestaMetodoAceleracaoDoModeloVeiculo()
+        public void TestaMetodoAceleracar()
         {
             // AAA
             //Arrenge (CONFIGURAÇÃO)
@@ -18,7 +18,7 @@ namespace Alura.Estacionamento.Testes
         }
 
         [Fact]
-        public void TestaMetodoFreiarDoModeloVeiculo()
+        public void TestaMetodoFrear()
         {
             var veiculo = new Veiculo();
             veiculo.Frear(10); //10 * 15 - velocidade atual
