@@ -21,7 +21,7 @@ namespace Alura.Estacionamento.Testes
 
         [Fact/*(DisplayName = "Teste para aceleração de um veículo")*/]
         //[Trait("Funcionalidade", "Acelerar")]
-        public void Testa_Metodo_Acelerar_Com_Parametro_Dez()
+        public void Teste_Metodo_Acelerar_Com_Parametro_Dez()
         {
             // AAA
             //Arrenge (CONFIGURAÇÃO)
@@ -36,7 +36,7 @@ namespace Alura.Estacionamento.Testes
 
         [Fact]
         //[Trait("Funcionalidade", "Frear")]
-        public void Testa_Metodo_Frear_Com_Parametro_Dez()
+        public void Teste_Metodo_Frear_Com_Parametro_Dez()
         {
             //var veiculo = new Veiculo();
 
@@ -56,7 +56,7 @@ namespace Alura.Estacionamento.Testes
         }
 
         [Fact]
-        public void Testa_Dados_Do_Veiculo()
+        public void Teste_Dados_Do_Veiculo()
         {
             //var veiculo = new Veiculo();
             _veiculo.Proprietario = "Fulano";
@@ -73,6 +73,20 @@ namespace Alura.Estacionamento.Testes
 
 
             Assert.Contains("Tipo do Veículo: Automovel", dados);
+        }
+
+        [Fact]
+        public void Teste_Ultimos_Caracteres_Placa_Veiculo_Como_Numeros()
+        {
+            //Arrange
+            string placaFormatoErrado = "ASD-995U";
+
+            //Assert
+            Assert.Throws<FormatException>(
+                //Act
+                () => new Veiculo().Placa = placaFormatoErrado
+            );
+
         }
 
         public void Dispose()
