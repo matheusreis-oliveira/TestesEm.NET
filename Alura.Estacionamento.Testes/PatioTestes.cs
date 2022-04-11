@@ -48,11 +48,35 @@ namespace Alura.Estacionamento.Testes
             estacionamento.RegistrarSaidaVeiculo(veiculo.Placa);
 
 
+
             var faturamento = estacionamento.TotalFaturado();
 
 
 
             Assert.Equal(2, faturamento);
+        }
+
+        [Theory] //permite fazer testes com parametros usando o InlineData
+        [InlineData("Fulano de Tal", "ABC-1234", "Preto", "Carro")]
+        public void TesteMetodoPesquisaVeiculo(string proprietario, string placa, string cor, string modelo)
+        {
+            var estacionamento = new Patio();
+            var veiculo = new Veiculo();
+
+            veiculo.Proprietario = proprietario;
+            veiculo.Placa = placa;
+            veiculo.Cor = cor;
+            veiculo.Modelo = modelo;
+
+            estacionamento.RegistrarEntradaVeiculo(veiculo);
+
+
+
+            var consultado = estacionamento.PesquisaVeiculo(placa);
+
+
+
+            Assert.Equal(placa, consultado.Placa);
         }
     }
 }
