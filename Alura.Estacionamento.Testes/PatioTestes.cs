@@ -7,7 +7,7 @@ namespace Alura.Estacionamento.Testes
     public class PatioTestes
     {
         [Fact]
-        public void TestaMetodoTotalFaturadoComUmVeiculo()
+        public void Testa_Metodo_Total_Faturado_Com_Um_Veiculo()
         {
             var estacionamento = new Patio();
             var veiculo = new Veiculo();
@@ -34,7 +34,7 @@ namespace Alura.Estacionamento.Testes
         [InlineData("Fulano de Tal", "ABC-1234", "Preto", "Carro")]
         [InlineData("Fulano de Tal Filho", "BCD-4321", "Branco", "Carro")]
         [InlineData("Fulano de Tal Primo", "GEF-9876", "Vermelho", "Moto")]
-        public void TestaMetodoTotalFaturadoComVariosVeiculos(string proprietario, string placa, string cor, string modelo)
+        public void Testa_Metodo_Total_Faturado_Com_Varios_Veiculos(string proprietario, string placa, string cor, string modelo)
         {
             var estacionamento = new Patio();
             var veiculo = new Veiculo();
@@ -58,7 +58,7 @@ namespace Alura.Estacionamento.Testes
 
         [Theory] //permite fazer testes com parametros usando o InlineData
         [InlineData("Fulano de Tal", "ABC-1234", "Preto", "Carro")]
-        public void TestaMetodoPesquisaVeiculo(string proprietario, string placa, string cor, string modelo)
+        public void Testa_Metodo_Pesquisa_Veiculo(string proprietario, string placa, string cor, string modelo)
         {
             var estacionamento = new Patio();
             var veiculo = new Veiculo();
@@ -80,7 +80,7 @@ namespace Alura.Estacionamento.Testes
         }
 
         [Fact]
-        public void TestaMetodoAlterarDadosVeiculo()
+        public void Testa_Metodo_Alterar_Dados_Veiculo_Alterando_Placa()
         {
             var estacionamento = new Patio();
             var veiculo = new Veiculo
