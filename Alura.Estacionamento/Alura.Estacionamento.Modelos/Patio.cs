@@ -1,13 +1,16 @@
 ﻿using Alura.Estacionamento.Alura.Estacionamento.Modelos;
+using Alura.Estacionamento.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Alura.Estacionamento.Modelos
 {
     public class Patio
     {
-
+        private Operador _operadorPatio;
         public Patio()
         {
             Faturado = 0;
@@ -17,6 +20,7 @@ namespace Alura.Estacionamento.Modelos
         private double faturado;
         public double Faturado { get => faturado; set => faturado = value; }
         public List<Veiculo> Veiculos { get => veiculos; set => veiculos = value; }
+        public Operador OperadorPatio { get => _operadorPatio; set => _operadorPatio = value; }
         public double TotalFaturado()
         {
             return this.Faturado;
@@ -37,54 +41,48 @@ namespace Alura.Estacionamento.Modelos
 
         public string RegistrarSaidaVeiculo(String placa)
         {
-            Veiculo procurado = null;
-            string informacao = string.Empty;
+            Veiculo encontrado = null;
+            string registro = string.Empty;
 
             foreach (Veiculo v in this.Veiculos)
             {
                 if (v.Placa == placa)
                 {
                     v.HoraSaida = DateTime.Now;
-                    TimeSpan tempoPermanencia = v.HoraSaida - v.HoraEntrada;
-                    double valorASerCobrado = 0;
+                    TimeSpan tempo = v.HoraSaida - v.HoraEntrada;
+                    double valorCobrado = 0;
                     if (v.Tipo == TipoVeiculo.Automovel)
                     {
                         /// o método Math.Ceiling(), aplica o conceito de teto da matemática onde o valor máximo é o inteiro imediatamente posterior a ele.
                         /// Ex.: 0,9999 ou 0,0001 teto = 1
                         /// Obs.: o conceito de chão é inverso e podemos utilizar Math.Floor();
-                        valorASerCobrado = Math.Ceiling(tempoPermanencia.TotalHours) * 2;
+                        valorCobrado = Math.Ceiling(tempo.TotalHours) * 2;
 
                     }
-                    if (v.Tipo == TipoVeiculo.Motocicleta)
+                    else if (v.Tipo == TipoVeiculo.Motocicleta)
                     {
-                        valorASerCobrado = Math.Ceiling(tempoPermanencia.TotalHours) * 1;
+                        valorCobrado = Math.Ceiling(tempo.TotalHours) * 1;
                     }
-                    informacao = string.Format(" Hora de entrada: {0: HH: mm: ss}\n " +
+                    registro = string.Format(" Hora de entrada: {0: HH: mm: ss}\n " +
                                              "Hora de saída: {1: HH:mm:ss}\n " +
                                              "Permanência: {2: HH:mm:ss} \n " +
-                                             "Valor a pagar: {3:c}", v.HoraEntrada, v.HoraSaida, new DateTime().Add(tempoPermanencia), valorASerCobrado);
-                    procurado = v;
-                    this.Faturado = this.Faturado + valorASerCobrado;
+                                             "Valor a pagar: {3:c}", v.HoraEntrada, v.HoraSaida, new DateTime().Add(tempo), valorCobrado);
+                    encontrado = v;
+                    this.Faturado = this.Faturado + valorCobrado;
                     break;
                 }
 
             }
-            if (procurado != null)
+            if (encontrado != null)
             {
-                this.Veiculos.Remove(procurado);
+                this.Veiculos.Remove(encontrado);
             }
             else
             {
-                return "Não encontrado veículo com a placa informada.";
+                return "Não há veículo com a placa informada.";
             }
 
-            return informacao;
-        }
-
-        public Veiculo PesquisaVeiculo(string placa, string idTicket)
-        {
-            var veiculosEncontrados = Veiculos.FirstOrDefault(v => v.Placa == placa && v.IdTicket == idTicket);
-            return veiculosEncontrados;
+            return registro;
         }
 
         public Veiculo AlterarDadosVeiculo(Veiculo veiculoAlterado)
@@ -93,6 +91,25 @@ namespace Alura.Estacionamento.Modelos
             veiculoTemporario.AlterarDados(veiculoAlterado);
             return veiculoTemporario;
         }
+
+        public Veiculo PesquisaVeiculo(string placa, string idTicket)
+        {
+            var veiculosEncontrados = Veiculos.FirstOrDefault(v => v.Placa == placa && v.IdTicket == idTicket);
+            return veiculosEncontrados;
+        }
+
+        public Veiculo PesquisaVeiculoPlaca(string placa)
+        {
+            var veiculosEncontrados = Veiculos.FirstOrDefault(v => v.Placa == placa);
+            return veiculosEncontrados;
+        }
+
+        public Veiculo PesquisaVeiculoIdTicket(string idTicket)
+        {
+            var veiculosEncontrados = Veiculos.FirstOrDefault(v => v.IdTicket == idTicket);
+            return veiculosEncontrados;
+        }
+
         private string GerarTicket(Veiculo veiculo)
         {
             var identificador = new Guid().ToString().Substring(0, 5);
@@ -101,8 +118,8 @@ namespace Alura.Estacionamento.Modelos
             var ticket = "###Ticket Estacionamento Alura###" +
                             $"Identifcador: {identificador}" +
                             $"Data/Hora de entrada: {DateTime.Now}" +
-                            $"Placa do Veículo:{veiculo.Placa}";
-
+                            $"Placa do Veículo:{veiculo.Placa}" + 
+                            $">>> Operador: {this.OperadorPatio.Matricula}";
             return ticket;
         }
     }
