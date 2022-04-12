@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "MSeMvcGYAlmfqOK3aG+ALtdny6zYM5JMAq8ofYj77xNI+0pdYFhv8Sqg/ZnsPgpji9m/a/EjA2RiaM5L3teLBA==",
+  "success": true,
+  "projectFilePath": "D:\\dev\\TestesEm.NET\\TestesIntegracao\\Alura.ByteBank.Aplicacao\\Alura.ByteBank.Aplicacao.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mathr\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\mathr\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\mathr\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\mathr\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.0.0\\microsoft.extensions.dependencyinjection.abstractions.3.0.0.nupkg.sha512",
+    "C:\\Users\\mathr\\.nuget\\packages\\microsoft.extensions.options\\3.0.0\\microsoft.extensions.options.3.0.0.nupkg.sha512",
+    "C:\\Users\\mathr\\.nuget\\packages\\microsoft.extensions.primitives\\3.0.0\\microsoft.extensions.primitives.3.0.0.nupkg.sha512",
+    "C:\\Users\\mathr\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
