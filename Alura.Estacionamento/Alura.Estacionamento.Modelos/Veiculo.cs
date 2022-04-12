@@ -9,8 +9,11 @@ namespace Alura.Estacionamento.Modelos
         private string _placa;
         private string _proprietario;
         private TipoVeiculo _tipo;
+        private string _ticket;
 
-        //Propriedades   
+        //Propriedades
+        public string Ticket { get { return _ticket; } set { _ticket = value; } }
+        public string IdTicket { get; set; }
 
         public string Placa
         {
@@ -50,6 +53,7 @@ namespace Alura.Estacionamento.Modelos
 
             }
         }
+
         /// <summary>
         /// { get; set; } cria uma propriedade automática, ou seja,
         /// durante a compilação, é gerado um atributo para armazenar

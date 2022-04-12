@@ -31,6 +31,7 @@ namespace Alura.Estacionamento.Modelos
         public void RegistrarEntradaVeiculo(Veiculo veiculo)
         {
             veiculo.HoraEntrada = DateTime.Now;
+            veiculo.Ticket = this.GerarTicket(veiculo);
             this.Veiculos.Add(veiculo);
         }
 
@@ -80,9 +81,9 @@ namespace Alura.Estacionamento.Modelos
             return informacao;
         }
 
-        public Veiculo PesquisaVeiculo(string placa)
+        public Veiculo PesquisaVeiculo(string placa, string idTicket)
         {
-            var veiculosEncontrados = Veiculos.FirstOrDefault(v => v.Placa == placa);
+            var veiculosEncontrados = Veiculos.FirstOrDefault(v => v.Placa == placa && v.IdTicket == idTicket);
             return veiculosEncontrados;
         }
 
@@ -91,6 +92,18 @@ namespace Alura.Estacionamento.Modelos
             var veiculoTemporario = Veiculos.FirstOrDefault(v => v.Placa == veiculoAlterado.Placa);
             veiculoTemporario.AlterarDados(veiculoAlterado);
             return veiculoTemporario;
+        }
+        private string GerarTicket(Veiculo veiculo)
+        {
+            var identificador = new Guid().ToString().Substring(0, 5);
+            veiculo.IdTicket = identificador;
+
+            var ticket = "###Ticket Estacionamento Alura###" +
+                            $"Identifcador: {identificador}" +
+                            $"Data/Hora de entrada: {DateTime.Now}" +
+                            $"Placa do Veículo:{veiculo.Placa}";
+
+            return ticket;
         }
     }
 }

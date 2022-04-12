@@ -73,7 +73,7 @@ namespace Alura.Estacionamento.Testes
 
         [Theory] //permite fazer testes com parametros usando o InlineData
         [InlineData("Fulano de Tal", "ABC-1234", "Preto", "Carro")]
-        public void Teste_Metodo_Pesquisa_Veiculo(string proprietario, string placa, string cor, string modelo)
+        public void Teste_Metodo_Pesquisa_Veiculo_com_Placa_e_IdTicket(string proprietario, string placa, string cor, string modelo)
         {
             //var estacionamento = new Patio();
 
@@ -87,11 +87,12 @@ namespace Alura.Estacionamento.Testes
 
 
 
-            var consultado = _patio.PesquisaVeiculo(placa);
+            var consultado = _patio.PesquisaVeiculo(placa, _veiculo.IdTicket);
 
 
 
-            Assert.Equal(placa, consultado.Placa);
+            Assert.Equal(placa, consultado.Placa); //placa
+            Assert.Equal(_veiculo.IdTicket, consultado.IdTicket); //idTicket
         }
 
         [Fact]
