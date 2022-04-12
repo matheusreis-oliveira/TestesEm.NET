@@ -1,0 +1,12 @@
+D:\dev\TestesEm.NET\TestesIntegracao\Alura.ByteBank.Domain\bin\Debug\net5.0\Alura.ByteBank.Dominio.deps.json
+D:\dev\TestesEm.NET\TestesIntegracao\Alura.ByteBank.Domain\bin\Debug\net5.0\Alura.ByteBank.Dominio.dll
+D:\dev\TestesEm.NET\TestesIntegracao\Alura.ByteBank.Domain\bin\Debug\net5.0\ref\Alura.ByteBank.Dominio.dll
+D:\dev\TestesEm.NET\TestesIntegracao\Alura.ByteBank.Domain\bin\Debug\net5.0\Alura.ByteBank.Dominio.pdb
+D:\dev\TestesEm.NET\TestesIntegracao\Alura.ByteBank.Domain\obj\Debug\net5.0\Alura.ByteBank.Dominio.csproj.AssemblyReference.cache
+D:\dev\TestesEm.NET\TestesIntegracao\Alura.ByteBank.Domain\obj\Debug\net5.0\Alura.ByteBank.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+D:\dev\TestesEm.NET\TestesIntegracao\Alura.ByteBank.Domain\obj\Debug\net5.0\Alura.ByteBank.Dominio.AssemblyInfoInputs.cache
+D:\dev\TestesEm.NET\TestesIntegracao\Alura.ByteBank.Domain\obj\Debug\net5.0\Alura.ByteBank.Dominio.AssemblyInfo.cs
+D:\dev\TestesEm.NET\TestesIntegracao\Alura.ByteBank.Domain\obj\Debug\net5.0\Alura.ByteBank.Dominio.csproj.CoreCompileInputs.cache
+D:\dev\TestesEm.NET\TestesIntegracao\Alura.ByteBank.Domain\obj\Debug\net5.0\Alura.ByteBank.Dominio.dll
+D:\dev\TestesEm.NET\TestesIntegracao\Alura.ByteBank.Domain\obj\Debug\net5.0\ref\Alura.ByteBank.Dominio.dll
+D:\dev\TestesEm.NET\TestesIntegracao\Alura.ByteBank.Domain\obj\Debug\net5.0\Alura.ByteBank.Dominio.pdb

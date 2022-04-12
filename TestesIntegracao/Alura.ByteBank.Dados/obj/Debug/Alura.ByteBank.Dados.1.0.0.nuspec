@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Alura.ByteBank.Dados</id>
+    <version>1.0.0</version>
+    <authors>Alura.ByteBank.Dados</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="Alura.ByteBank.Dominio" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore" version="5.0.11" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Proxies" version="5.0.11" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Relational" version="5.0.11" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.NETCore.App" version="2.2.0" exclude="Build,Analyzers" />
+        <dependency id="Pomelo.EntityFrameworkCore.MySql" version="5.0.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\dev\TestesEm.NET\TestesIntegracao\Alura.ByteBank.Dados\bin\Debug\net5.0\Alura.ByteBank.Dados.runtimeconfig.json" target="lib\net5.0\Alura.ByteBank.Dados.runtimeconfig.json" />
+    <file src="D:\dev\TestesEm.NET\TestesIntegracao\Alura.ByteBank.Dados\bin\Debug\net5.0\Alura.ByteBank.Dados.dll" target="lib\net5.0\Alura.ByteBank.Dados.dll" />
+  </files>
+</package>
