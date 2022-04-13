@@ -191,6 +191,9 @@
             "projectReferences": {
               "D:\\dev\\TestesEm.NET\\TestesIntegracao\\Alura.ByteBank.Dados\\Alura.ByteBank.Dados.csproj": {
                 "projectPath": "D:\\dev\\TestesEm.NET\\TestesIntegracao\\Alura.ByteBank.Dados\\Alura.ByteBank.Dados.csproj"
+              },
+              "D:\\dev\\TestesEm.NET\\TestesIntegracao\\Alura.ByteBank.Domain\\Alura.ByteBank.Dominio.csproj": {
+                "projectPath": "D:\\dev\\TestesEm.NET\\TestesIntegracao\\Alura.ByteBank.Domain\\Alura.ByteBank.Dominio.csproj"
               }
             }
           }
@@ -208,6 +211,10 @@
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.9.4, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
