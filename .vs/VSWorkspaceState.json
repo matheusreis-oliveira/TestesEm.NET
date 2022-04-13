@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Alura.Estacionamento",
-    "\\Alura.Estacionamento.Testes",
-    "\\Alura.Estacionamento\\Alura.Estacionamento.Modelos"
+    "\\TestesIntegracao",
+    "\\TestesUnitarios"
   ],
-  "SelectedNode": "\\Alura.Estacionamento.sln",
+  "SelectedNode": "\\TestesIntegracao\\Alura.ByteBank.sln",
   "PreviewInSolutionExplorer": false
 }
